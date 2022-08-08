@@ -17,6 +17,10 @@ The server sample of polymath.
 ## run
 
 ```shell
+# update project
+poetry update
+
+# run sample server
 poetry run python -m sample
 ```
 
