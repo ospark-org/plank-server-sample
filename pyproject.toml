@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "polymath_sample"
+version = "0.1.0"
+description = ""
+authors = ["Grady Zhuo <gradyzhuo@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8, <3.10"
+polymath-server-http = {git = "https://github.com/ospark-org/polymath-server-http.git", rev = "main"}
+polymath-core = {git = "https://github.com/ospark-org/polymath-core.git", rev = "main"}
+
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
