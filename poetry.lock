@@ -100,7 +100,7 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "polymath-core"
-version = "0.1.0.dev152"
+version = "0.1.0.dev176"
 description = ""
 category = "main"
 optional = false
@@ -119,11 +119,11 @@ toml = "^0.10.2"
 type = "git"
 url = "https://github.com/ospark-org/polymath-core.git"
 reference = "main"
-resolved_reference = "40879e7faae07746ce0b389df56c0118b62ea939"
+resolved_reference = "dd03f09c971443370629ff64ae66b5d1a1ca4d3e"
 
 [[package]]
 name = "polymath-server-http"
-version = "0.1.0.dev164"
+version = "0.1.0.dev208"
 description = ""
 category = "main"
 optional = false
@@ -138,7 +138,7 @@ uvicorn = "^0.17.6"
 type = "git"
 url = "https://github.com/ospark-org/polymath-server-http.git"
 reference = "main"
-resolved_reference = "ca82e02c562584310b57b3439f928e284bc409b4"
+resolved_reference = "d14589981a5f2c8afa6385a67f1dfabe051e2d6d"
 
 [[package]]
 name = "pydantic"

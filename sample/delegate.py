@@ -1,8 +1,9 @@
 from polymath.app import *
+from polymath.server.fastapi import FastAPIServer
 from sample.service.library import *
 from sample.service.sample import *
 
-class AppDelegate(Application.Delegate):
+class AppDelegate(FastAPIServer.Delegate):
     def application_did_launch(self, app: Application):
         library = LibraryService(name="library", serving_path="/library")
         app.add_service(library)
