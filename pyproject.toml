@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "polymath_sample"
+name = "plank-server-sample"
 version = "0.1.0"
 description = ""
 authors = ["Grady Zhuo <gradyzhuo@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.8, <3.10"
-polymath-server-http = {git = "https://github.com/ospark-org/polymath-server-http.git", rev = "main"}
-polymath-core = {git = "https://github.com/ospark-org/polymath.git", rev = "main"}
+plank-extend-fastapi = {git = "https://github.com/ospark-org/plank-extend-fastapi.git", rev = "main"}
+plank = {git = "https://github.com/ospark-org/plank.git", rev = "main"}
 
 
 [tool.poetry.dev-dependencies]

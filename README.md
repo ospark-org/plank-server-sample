@@ -1,5 +1,5 @@
-# polymath-sample
-The server sample of polymath.
+# plank-server-sample
+The server sample of plank with fastapi.
 
 
 ## install [poetry](https://python-poetry.org/docs/)
