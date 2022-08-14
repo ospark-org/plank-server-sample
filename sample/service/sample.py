@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import List
-from polymath.serving.service import Service
-from polymath.decorator.fastapi import routable
+from plank.serving.service import Service
+from plank.decorator.fastapi import routable
 from sample.service.library import Book, LibraryService, GetResult
 
 class SampleService(Service):

@@ -1,7 +1,7 @@
 from typing import List, Optional
 from fastapi.responses import JSONResponse, Response
-from polymath.serving.service import Service
-from polymath.decorator.fastapi import routable
+from plank.serving.service import Service
+from plank.decorator.fastapi import routable
 from pydantic import BaseModel
 import re
 

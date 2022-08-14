@@ -1,5 +1,5 @@
-from polymath.app import *
-from polymath.server.fastapi import FastAPIServer
+from plank.app import *
+from plank.server.fastapi import FastAPIServer
 from sample.service.library import *
 from sample.service.sample import *
 

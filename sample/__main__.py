@@ -1,7 +1,7 @@
 import uvicorn
 from pathlib import Path
 from .delegate import AppDelegate
-from polymath.server.fastapi import FastAPIServer
+from plank.server.fastapi import FastAPIServer
 
 workspace = Path.cwd()
 delegate = AppDelegate()
