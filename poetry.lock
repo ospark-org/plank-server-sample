@@ -100,7 +100,7 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "plank"
-version = "0.1.0.dev176"
+version = "0.1.0.dev196"
 description = ""
 category = "main"
 optional = false
@@ -119,11 +119,11 @@ toml = "^0.10.2"
 type = "git"
 url = "https://github.com/ospark-org/plank.git"
 reference = "main"
-resolved_reference = "c2c6b20fd008ad26d65556e9954191ca6bd65c8a"
+resolved_reference = "24f7d65613e7132223d69699bbc484d69796396d"
 
 [[package]]
 name = "plank-extend-fastapi"
-version = "0.1.0.dev208"
+version = "0.1.0.dev238"
 description = ""
 category = "main"
 optional = false
@@ -132,13 +132,14 @@ develop = false
 
 [package.dependencies]
 fastapi = "^0.78.0"
+pydantic = "^1.9.2"
 uvicorn = "^0.17.6"
 
 [package.source]
 type = "git"
 url = "https://github.com/ospark-org/plank-extend-fastapi.git"
 reference = "main"
-resolved_reference = "4b4b3963b9d3c08fc01d1b099468acccb86ef7b7"
+resolved_reference = "14a66d94363755aa7d2d70717251e41c6b51d77c"
 
 [[package]]
 name = "pydantic"

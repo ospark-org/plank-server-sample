@@ -23,7 +23,8 @@ class SampleService(Service):
         ]
 
         for book in books:
-            library_service.add(book=book)
+            result = library_service.add(book=book)
+            print("result:", result)
 
         return GetResult(
             succeed=True,

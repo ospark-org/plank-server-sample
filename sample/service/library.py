@@ -20,31 +20,38 @@ class DeleteResult(BaseModel):
 
 class GetResult(BaseModel):
     succeed: bool
-    books: Optional[List[Book]]
+    books: Optional[List[Book]] = None
 
 class LibraryService(Service):
     library_dict = {}
 
     @routable(path="/add", methods=["PUT"], tags=["Library"])
-    def add(self, book: Book)->AddResult:
+    def add(self, book: Book)->Optional[Book]:
         if book.id not in self.library_dict:
             self.library_dict[book.id] = book
-            return AddResult(succeed=True, message=f"Added {book}.")
+            return book
         else:
-            return AddResult(succeed=False, message=f"The book `{book.id}` exists in library.")
+            return None
+
+    @add.response(response_model=AddResult)
+    def add(self, value: Optional[Book]):
+        if value is not None:
+            return AddResult(succeed=True, message=f"Added {value}.")
+        else:
+            return AddResult(succeed=False, message=f"The book exists in library.")
 
     @routable(path="/get", methods=["GET"], tags=["Library"])
-    def get(self, book_id: str) -> GetResult:
-        if book_id in self.library_dict:
-            return GetResult(succeed=True, books=[self.library_dict[book_id]])
-        else:
-            return GetResult(succeed=False, books=None)
+    def get(self, book_id: str)->Optional[Book]:
+        return self.library_dict.get(book_id)
 
-    @get.response
-    def response(self, result: GetResult)->Response:
-        status_code = 200
-        if not result.succeed:
+    @get.response(response_model=GetResult)
+    def get(self, value: Optional[Book])->Response:
+        if value is None:
             status_code = 404
+            result = GetResult(succeed=False)
+        else:
+            status_code = 200
+            result = GetResult(succeed=True, books=[value])
         return JSONResponse(result.dict(), status_code=status_code)
 
     @routable(path="/delete", methods=["DELETE"], tags=["Library"])
