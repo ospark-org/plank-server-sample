@@ -42,17 +42,19 @@ class LibraryService(Service):
 
     @routable(path="/get", methods=["GET"], tags=["Library"])
     def get(self, book_id: str)->Optional[Book]:
-        return self.library_dict.get(book_id)
+        book = self.library_dict.get(book_id)
+        # print("book:", book)
+        if book is None:
+            raise ValueError("The id of book is not found.")
+        return book
 
     @get.response(response_model=GetResult)
-    def get(self, value: Optional[Book])->Response:
-        if value is None:
-            status_code = 404
-            result = GetResult(succeed=False)
-        else:
-            status_code = 200
-            result = GetResult(succeed=True, books=[value])
-        return JSONResponse(result.dict(), status_code=status_code)
+    def get(self, value: Optional[Book]):
+        return JSONResponse(GetResult(succeed=True, books=[value]).dict())
+
+    @get.catch(ValueError)
+    def get(self, error: Exception):
+        return JSONResponse(str(error), status_code=404)
 
     @routable(path="/delete", methods=["DELETE"], tags=["Library"])
     def delete(self, book_id: str) -> DeleteResult:
