@@ -10,4 +10,4 @@ server = FastAPIServer.build(name="Sample", version="1.0.0", build_version="2022
 server.launch(program="debug")
 
 if __name__ == "__main__":
-    uvicorn.run("sample.__main__:server", host="0.0.0.0", port=8888, workers=2)
+    uvicorn.run("sample.__main__:server", host="0.0.0.0", port=8888, workers=1)

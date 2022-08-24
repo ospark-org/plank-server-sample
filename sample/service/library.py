@@ -41,9 +41,8 @@ class LibraryService(Service):
             return AddResult(succeed=False, message=f"The book exists in library.")
 
     @routable(path="/get", methods=["GET"], tags=["Library"])
-    def get(self, book_id: str)->Optional[Book]:
+    def get(self, book_id: str)->Book:
         book = self.library_dict.get(book_id)
-        # print("book:", book)
         if book is None:
             raise ValueError("The id of book is not found.")
         return book
@@ -52,7 +51,7 @@ class LibraryService(Service):
     def get(self, value: Optional[Book]):
         return JSONResponse(GetResult(succeed=True, books=[value]).dict())
 
-    @get.catch(ValueError)
+    @get.catch(ValueError, AttributeError)
     def get(self, error: Exception):
         return JSONResponse(str(error), status_code=404)
 

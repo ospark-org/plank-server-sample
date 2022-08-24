@@ -1,6 +1,5 @@
 from plank.app import *
 from plank.server.fastapi import FastAPIServer
-from sample.service.library import *
 from sample.service.sample import *
 
 class AppDelegate(FastAPIServer.Delegate):
@@ -10,6 +9,5 @@ class AppDelegate(FastAPIServer.Delegate):
 
         sample = SampleService(name="sample", serving_path="/sample")
         app.add_service(sample)
-
 
 

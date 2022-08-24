@@ -1,5 +1,3 @@
-from pydantic import BaseModel
-from typing import List
 from plank.serving.service import Service
 from plank.decorator.fastapi import routable
 from sample.service.library import Book, LibraryService, GetResult
@@ -30,5 +28,5 @@ class SampleService(Service):
             succeed=True,
             books=books
         )
-    
+
 

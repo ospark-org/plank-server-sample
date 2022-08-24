@@ -123,7 +123,7 @@ resolved_reference = "24f7d65613e7132223d69699bbc484d69796396d"
 
 [[package]]
 name = "plank-extend-fastapi"
-version = "0.1.0.dev296"
+version = "0.1.0.dev301"
 description = ""
 category = "main"
 optional = false
@@ -139,7 +139,7 @@ uvicorn = "^0.17.6"
 type = "git"
 url = "https://github.com/ospark-org/plank-extend-fastapi.git"
 reference = "main"
-resolved_reference = "2880e05c6e70bf46b121ba533d28124875a37ba0"
+resolved_reference = "e3fd2ca330d8d6eb1be7582697ade6fd36bf66a0"
 
 [[package]]
 name = "pydantic"
